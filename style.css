@@ -1,0 +1,315 @@
+/* | IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/* | CSS RESET  */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* | UTILITY CLSSES */
+.mobile {
+	display: none;
+}
+
+.cp {
+	cursor: pointer;
+}
+
+.hov:hover {
+	color: var(--Soft-red);
+}
+
+/* | VARIABLES */
+:root {
+	/* | COLORS  */
+	--very-dark-desaturated-blue: hsl(238, 29%, 16%);
+	--Soft-red: hsl(14, 88%, 65%);
+	--soft-violet: hsl(273, 75%, 66%);
+	--soft-blue: hsl(240, 73%, 65%);
+	--very-dark-grayish-blue: hsl(237, 12%, 33%);
+	--dark-grayish-blue: hsl(240, 6%, 50%);
+	--light-grayish-blue: hsl(240, 5%, 91%);
+
+	/* | FONTS  */
+
+	--body-font: 400 15px 'Kumbh Sans';
+	--answer-font: 400 12px 'Kumbh Sans';
+	--h1-font: 700 36px 'Kumbh Sans';
+}
+
+/* | GENERAL STYLES */
+html {
+	width: 1440px;
+	aspect-ratio: 9/5;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+	color: var(--very-dark-grayish-blue);
+	font: var(--body-font);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.container {
+	width: 915px;
+	height: 510px;
+	margin: 50px;
+	padding: 0 95px;
+	border-radius: 20px;
+	background: var(--light-grayish-blue) url(img/bg-pattern-desktop.svg) -130px center
+		no-repeat;
+	background-size: contain;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 50px;
+	position: relative;
+}
+
+.box {
+	position: absolute;
+	left: -93px;
+	top: 64%;
+	transform: translateY(-64%);
+}
+
+/* .box img {
+	width: 90px;
+	height: 105px;
+} */
+
+.img-section {
+	width: 388px;
+	margin-left: -95px;
+	display: flex;
+	justify-content: flex-end;
+	overflow: hidden;
+}
+
+.img-section img {
+	width: 472px;
+	height: 359px;
+}
+
+.text-area {
+	width: 350px;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 24px;
+}
+
+h1 {
+	font: var(--h1-font);
+	color: var(--very-dark-desaturated-blue);
+}
+
+.article-questions {
+	width: 100%;
+	display: flex;
+	flex-flow: column;
+	gap: 3px;
+}
+
+.questions {
+	padding-block: 16px;
+	border-bottom: 1px solid var(--dark-grayish-blue);
+	display: flex;
+	flex-flow: column;
+	gap: 14px;
+}
+
+.questions input {
+	display: none;
+}
+
+.question {
+	margin-right: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.question:first-of-type {
+	list-style: none;
+}
+
+.answer {
+	display: none;
+	font: var(--answer-font);
+}
+
+#question1:checked ~ label p,
+#question2:checked ~ label p,
+#question3:checked ~ label p,
+#question4:checked ~ label p,
+#question5:checked ~ label p {
+	font-weight: 700;
+}
+
+#question1:checked ~ #answer1,
+#question2:checked ~ #answer2,
+#question3:checked ~ #answer3,
+#question4:checked ~ #answer4,
+#question5:checked ~ #answer5 {
+	display: flex;
+}
+
+@media screen and (max-width: 750px) {
+	/* | UTILITY CLSSES */
+	.mobile {
+		display: block;
+	}
+
+	.desktop {
+		display: none;
+	}
+
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-font: 400 30px 'Kumbh Sans';
+		--answer-font: 400 24px 'Kumbh Sans';
+		--h1-font: 700 72px 'Kumbh Sans';
+	}
+
+	/* | GENERAL STYLES */
+	body {
+		padding: 296px 48px 170px;
+	}
+
+	.container {
+		width: 100%;
+		height: 1060px;
+		margin: 0;
+		padding: 0 48px 96px;
+		background: var(--light-grayish-blue) url(img/bg-pattern-mobile.svg) center
+			0 no-repeat;
+		flex-flow: column;
+		gap: 100px;
+	}
+
+	.img-section {
+		width: 100%;
+		margin: 0;
+		margin-top: -216px;
+		justify-content: center;
+		overflow: visible;
+	}
+
+	.img-section img {
+		width: 100%;
+		height: 360px;
+	}
+
+	.text-area {
+		width: 100%;
+		align-items: center;
+		gap: 36px;
+	}
+
+	.article-questions {
+		gap: 6px;
+	}
+
+	.questions {
+		padding-block: 32px;
+		gap: 28px;
+	}
+
+	.question {
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-font: 400 22px 'Kumbh Sans';
+		--answer-font: 400 18px 'Kumbh Sans';
+		--h1-font: 700 54px 'Kumbh Sans';
+	}
+
+	/* | GENERAL STYLES */
+	body {
+		padding: 222px 36px 127px;
+	}
+
+	.container {
+		height: 795px;
+		padding: 0 36px 72px;
+		gap: 75px;
+	}
+
+	.img-section {
+		margin-top: -162px;
+	}
+
+	.img-section img {
+		height: 270px;
+	}
+
+	.text-area {
+		gap: 27px;
+	}
+
+	.article-questions {
+		gap: 4px;
+	}
+
+	.questions {
+		padding-block: 24px;
+		gap: 21px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--body-font: 400 15px 'Kumbh Sans';
+		--answer-font: 400 12px 'Kumbh Sans';
+		--h1-font: 700 36px 'Kumbh Sans';
+	}
+
+	/* | GENERAL STYLES */
+	body {
+		padding: 148px 24px 85px;
+	}
+
+	.container {
+		height: 530px;
+		padding: 0 24px 48px;
+		gap: 50px;
+	}
+
+	.img-section {
+		margin-top: -108px;
+	}
+
+	.img-section img {
+		height: 180px;
+	}
+
+	.text-area {
+		gap: 18px;
+	}
+
+	.article-questions {
+		gap: 3px;
+	}
+
+	.questions {
+		padding-block: 16px;
+		gap: 14px;
+	}
+}
